@@ -21,14 +21,14 @@ export const AddNewExpense = ({expenseData, updateExpenseData,addTransaction}) =
   
     // Check if billTitle is empty
     if (formData.billTitle.trim() === "") {
-      console.log("Bill Title cannot be empty");
+      alert("Bill Title cannot be empty");
       return;
     }
   
     // Check if billAmount is empty or not a valid number
     const parsedAmount = parseInt(formData.billAmount, 10);
     if (isNaN(parsedAmount) || parsedAmount <= 0) {
-      alert("Bill Amount must be a valid number greater than 0");
+      alert("Bill Amount must be greater than 0");
       return;
     }
   

@@ -7,18 +7,16 @@ export const ExpenseDisplay = ({expenseData}) => {
     <>
     <div className='expense-container'>
         <div className='expense-display'>
-            <h1>Income</h1>
-            
-            <h3 className='income-amount'>Ghc {expenseData.income}</h3>
+            <h2>Income</h2>
+            <h4 className='income-amount'>Ghc {expenseData.income}</h4>
         </div>
         <div className='expense-display'>
-            <h1>Expense</h1>
-            
-            <h3 className='expense-amount'>Ghc {expenseData.expense}</h3>
+            <h2>Expense</h2>
+            <h4 className='expense-amount'>Ghc {expenseData.expense}</h4>
         </div>
     </div>
     <div className='expense-notification alert '>
-        <h4>You have a litle left to spend Amos!</h4>
+        {expenseData.expense > expenseData.income? <h4>You have spent more than you income!</h4>: <h4>no notification</h4>}
     </div>
     </>
   )
