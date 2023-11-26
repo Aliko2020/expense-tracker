@@ -8,7 +8,7 @@ import { AddNewExpense } from './components/AddNewExpense';
 function App() {
   // Load initial data from localStorage or use default values
   const initialExpenseData = JSON.parse(localStorage.getItem('expenseData')) || {
-    income: 0,
+    income: 2000,
     expense: 0
   };
 
