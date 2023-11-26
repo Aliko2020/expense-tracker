@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h3>Expense Tracker</h3>
+        <h3>Expense Tracker v2</h3>
       </header>
       <ExpenseDisplay expenseData={expenseData} />
       <History transactions={transactions} />
