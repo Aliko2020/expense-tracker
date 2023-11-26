@@ -18,25 +18,40 @@ export const AddNewExpense = ({expenseData, updateExpenseData,addTransaction}) =
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  
+    // Check if billTitle is empty
+    if (formData.billTitle.trim() === "") {
+      console.log("Bill Title cannot be empty");
+      return;
+    }
+  
+    // Check if billAmount is empty or not a valid number
+    const parsedAmount = parseInt(formData.billAmount, 10);
+    if (isNaN(parsedAmount) || parsedAmount <= 0) {
+      alert("Bill Amount must be a valid number greater than 0");
+      return;
+    }
+  
     // Update expenseData in the App component
     updateExpenseData({
       ...expenseData,
-      expense: expenseData.expense + parseInt(formData.billAmount, 10) || 0
-      // Assuming billAmount is a string, convert it to an integer before adding to the expense
+      expense: expenseData.expense + parsedAmount
     });
-
+  
     // Add the new transaction to the transactions state
     addTransaction({
       description: formData.billTitle,
-      amount: parseInt(formData.billAmount, 10)
+      amount: parsedAmount
     });
-
+  
     // Clear the form data after submission
     setFormData({
       billTitle: "",
       billAmount: ""
     });
   };
+  
+  
   
   return (
     <div className='add-new-container'>
