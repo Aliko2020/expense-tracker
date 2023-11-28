@@ -4,17 +4,17 @@ import { useEffect, useState } from 'react';
 import { ExpenseDisplay } from './components/ExpenseDisplay';
 import { History } from './components/History';
 import { AddNewExpense } from './components/AddNewExpense';
+import { FaMoneyBillTrendUp } from "react-icons/fa6";
+
 
 function App() {
   // Load initial data from localStorage or use default values
   const initialExpenseData = JSON.parse(localStorage.getItem('expenseData')) || {
-    income: 3000,
+    income: 0,
     expense: 0
   };
 
-  const initialTransactions = JSON.parse(localStorage.getItem('transactions')) || [
-    
-  ];
+  const initialTransactions = JSON.parse(localStorage.getItem('transactions')) || [];
 
   const [expenseData, setExpenseData] = useState(initialExpenseData);
   const [transactions, setTransactions] = useState(initialTransactions);
@@ -39,9 +39,9 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h3>Expense Tracker v2</h3>
+        <h3> <FaMoneyBillTrendUp /> Expense Tracker v2</h3>
       </header>
-      <ExpenseDisplay expenseData={expenseData} />
+      <ExpenseDisplay expenseData={expenseData} updateExpenseData={updateExpenseData} />
       <History transactions={transactions} />
       <AddNewExpense
         expenseData={expenseData}

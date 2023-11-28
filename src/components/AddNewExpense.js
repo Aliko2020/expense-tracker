@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IoAddSharp } from "react-icons/io5";
 
 export const AddNewExpense = ({expenseData, updateExpenseData,addTransaction}) => {
   
@@ -61,6 +62,7 @@ export const AddNewExpense = ({expenseData, updateExpenseData,addTransaction}) =
         <div className='input-container'>
           <label htmlFor="bill-name">Bill Name</label>
           <input
+            autoFocus
             type='text'
             placeholder='Enter Expense title'
             name="billTitle"
@@ -78,7 +80,7 @@ export const AddNewExpense = ({expenseData, updateExpenseData,addTransaction}) =
             onChange={handleInputChange}
           />
         </div>
-        <button type="submit" className='add-btn'>Add</button>
+        <button type="submit" className='add-btn'> <IoAddSharp /> Add</button>
       </form>
     </div>
   );
