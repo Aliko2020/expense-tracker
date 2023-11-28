@@ -46,8 +46,6 @@ export const ExpenseDisplay = ({ expenseData, updateExpenseData }) => {
           <h4 className='expense-amount'>Ghc {expenseData.expense}</h4>
         </div>
       </div>
-      
-
       {/* Income Input Form */}
       {showIncomeForm && (
         <div className='income-form'>
@@ -64,6 +62,9 @@ export const ExpenseDisplay = ({ expenseData, updateExpenseData }) => {
         </div>
         
       )}
+      <div className='expense-notification alert'>
+          {expenseData.expense > expenseData.income ? <p>You have spent more than your Monthly income!</p>: <p>Beware of little expenses. A small leak will sink a great ship..💸</p>}
+      </div>
     </>
   );
 };

@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h3> <FaMoneyBillTrendUp /> Expense Tracker v2</h3>
+        <h3> <FaMoneyBillTrendUp /> Expense Tracker</h3>
       </header>
       <ExpenseDisplay expenseData={expenseData} updateExpenseData={updateExpenseData} />
       <History transactions={transactions} />
